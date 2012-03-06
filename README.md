@@ -4,12 +4,14 @@ This is a source code of my own blog. But not yet finished.
 It made from. node.js and moongoose, express with ejs.
 
 
-# Installation
+
+
+### Installation
 
 It's same as another, normal node.js project
 
 
 
-# Licence
+### Licence
 
 I might think more
