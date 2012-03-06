@@ -1,8 +1,12 @@
 # blog sizers
 
 This is a source code of my own blog. But not yet finished. 
+
 It made from. node.js and moongoose, express with ejs.
 
+This blog's running under cloud foundry paas cloud service.
+
+Url : http://sizers.cloudfoundry.com 
 
 
 
