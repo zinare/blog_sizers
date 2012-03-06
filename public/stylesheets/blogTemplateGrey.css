@@ -1,0 +1,235 @@
+/* prosto grey template, creation date: 18 august 2007 by gimcnuk (ruslog.com) */
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 1.0em;
+	color: #000;
+	background-color: #fff;
+}
+h1
+{
+	margin: 0px;
+	padding-top: 10px;
+	color: #999;
+	font-size: 1.7em;
+}
+h2
+{
+	margin: 0px;
+	padding-bottom: 10px;
+	color: #999;
+	font-size: 1.0em;
+}
+a
+{
+	color: #000;
+	text-decoration: underline;
+}
+a:hover
+{
+	text-decoration: none;
+}
+
+/* container */
+#container
+{
+	margin: 10px auto 10px auto;
+	width: 90%;
+}
+
+/* top block */
+#upperblock
+{
+	margin:0px;
+	padding:0px;
+	border: 1px solid #999;
+}
+.upblock
+{
+	margin: 0px;
+	padding: 15px;
+	border: 5px solid #eee;
+	text-align: center;
+}
+
+/* left panel */
+#leftpan
+{
+	float: left;
+	width: 250px;
+	margin: 0px;
+	padding: 0px;
+}
+/* left block */
+.lblock
+{
+	background-color:#ffffff;
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+	border: 1px solid #999;
+}
+.lblock h3
+{
+	margin: 0px;
+	padding: 3px;
+	color: #666;
+	background-color: #fafafa;
+	border: 5px solid #eee;
+}
+.lblock ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+.lblock li
+{
+	list-style-type: none;
+}
+.lblock p
+{
+	margin: 5px;
+	padding: 5px;
+	font-size: 0.9em;
+	text-align: justify;
+	background-color: #fafafa;
+	border: 1px solid #eee;
+}
+.lblock a
+{
+	display: block;
+	margin: 0px;
+	padding: 0px 0px 0px 10px;
+	color: #333;
+	font-size: 1.1em;
+	text-decoration: none;
+}
+.lblock a.current
+{
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.lblock a:hover
+{
+	color: #999;
+	text-decoration: none;
+}
+.lblock ul.less
+{
+	font-size: 0.8em;
+}
+.lblock form
+{
+	margin: 5px;
+}
+.lblock input[type=text]
+{
+	margin-right: 5px;
+	width: 170px;
+	font-weight: bold;
+	border: 1px solid #666;
+}
+.lblock input[type=submit]
+{
+	width: 50px;
+	border: 1px solid #666;
+}
+
+/* main panel */
+#mainpan
+{
+	margin: 0px 0px 0px 265px;
+	padding: 0px;
+}
+/* main block */
+.mblock
+{
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+	border: 1px solid #999;
+}
+.inmblock
+{
+	margin: 0px;
+	padding: 10px;
+	border: 5px solid #eee;
+}
+.inmblock h3
+{
+	margin: 2px;
+	padding: 1px;
+	font-size: 1.1em;
+}
+.inmblock h3 a
+{
+	color: #000;
+	text-decoration: none;
+}
+.inmblock h3 a:hover
+{
+	color: #000;
+	text-decoration: underline;
+}
+.inmblock img
+{
+	float: left;
+	margin: 0px 5px 5px 0px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+.inmblock p
+{
+	margin: 0px;
+	padding: 0px;
+	font-size: 90%;
+}
+.inmblock ul,ol,dl
+{
+	font-size: 0.9em;
+}
+.inmblock code
+{
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	background: #fafafa;
+	border: 1px solid #eee;
+	border-left: 5px solid #ccc;
+	white-space: pre;
+}
+.inmblock .comments
+{
+	margin: 5px;
+	padding: 0px;
+	color: #999;
+	font-size: 0.9em;
+}
+.inmblock .comments a
+{
+	color: #666;
+}
+
+/* bottom block */
+#bottompan
+{
+	margin: 0px;
+	padding: 20px 0px 0px 0px;
+	color: #666;
+	font-size: 0.8em;
+	text-align: center;
+}
+#bottompan p
+{
+	margin: 10px;
+}
+#bottompan a
+{
+	color: #666;
+	text-decoration: underline;
+}
+#bottompan a:hover
+{
+	text-decoration: none;
+}

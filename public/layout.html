@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+	<title>Layout Container</title>
+
+	<link type="text/css" rel="stylesheet" href="/stylesheets/layout-default.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/blogTemplateGrey.css" />
+	<style type="text/css">
+	html, body {
+		background:	#666;
+		width:		100%;
+		height:		100%;					
+		padding:	0;
+		margin:		0;
+		overflow:	auto; /* when page gets too small */
+	}
+	#container {
+		background:	#999;
+		height:		100%;
+		margin:		0 auto;
+		width:		100%;
+		max-width:	1200px;
+		min-width:	800px;
+		_width:		800px; /* min-width for IE6 */
+	}
+	.pane {
+		display:	none; /* will appear when layout inits */
+	}
+	</style>
+
+	<script type="text/javascript" src="/javascripts/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.ui.all.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.layout.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function () {
+		$('#container').layout({
+			//north__size:				125,
+			west__size:				250,
+			spacing_open:			8, // ALL panes
+			spacing_closed:			14 // ALL panes
+		});
+	});
+
+	</script>
+
+</head>
+<body>
+
+
+<div id="container">
+	<div class="pane ui-layout-center" style="padding:0px">
+		<div id="mainpan">
+			<div class="mblock">
+				<div class="inmblock">
+					<h3><a href="#">Super mega best header</a></h3>
+					<a href="http://www.favobit.com/"><img src="favobig.jpg" width="100" height="100" alt="just image example" /></a>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin eu est ut mi ornare placerat. <a href="#">Suspendisse felis odio, elementum non, blandit vel, auctor eget, nunc</a>. Fusce convallis dignissim odio. Phasellus commodo egestas felis. Praesent eu sem at mi tempus egestas. Donec mollis. Morbi in lectus id magna dictum eleifend. Morbi vel diam quis sapien sollicitudin lacinia. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In consequat facilisis turpis. Proin erat dui, dictum nec, tincidunt nec, pharetra nec, tellus. Curabitur facilisis, nulla a tincidunt gravida, leo pede porttitor odio, ac adipiscing felis leo sit amet justo. Nunc egestas sodales sem. Duis ac mauris eu enim scelerisque mattis. Vivamus tortor neque, ultricies vel, dignissim nec, porttitor pulvinar, wisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis ipsum nibh, nonummy sit amet, gravida et, ultrices at, wisi. Pellentesque iaculis auctor risus. Nullam mauris. Etiam pede tortor, auctor at, aliquet sit amet, hendrerit.</p>
+					<div class="comments">Posted on: August 24th, 2005 <a href="#">read more...</a></div>
+				</div>
+			</div>
+			<div class="mblock">
+				<div class="inmblock">
+					<h3><a href="#">Super mega best header 2 with various elements such as ul, ol, dl</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin eu est ut mi ornare placerat. Suspendisse felis odio, elementum non, blandit vel, auctor eget, nunc. Fusce convallis dignissim odio. Phasellus commodo egestas felis. Praesent eu sem at mi tempus egestas. Donec mollis. Morbi in lectus id magna dictum eleifend. Morbi vel diam quis sapien sollicitudin lacinia. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In consequat facilisis turpis. Proin erat dui, dictum nec, tincidunt nec, pharetra nec, tellus. Curabitur facilisis, nulla a tincidunt gravida, leo pede porttitor odio, ac adipiscing felis leo sit amet justo. Nunc egestas sodales sem. Duis ac mauris eu enim scelerisque mattis. Vivamus tortor neque, ultricies vel, dignissim nec, porttitor pulvinar, wisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis ipsum nibh, nonummy sit amet, gravida et, ultrices at, wisi. Pellentesque iaculis auctor risus. Nullam mauris. Etiam pede tortor, auctor at, aliquet sit amet, hendrerit.</p>
+					<ul>
+						<li><a href="http://validator.w3.org/check?uri=referer">Valid XHTML 1.1</a></li>
+						<li><a href="http://jigsaw.w3.org/css-validator/check/referer">Valid CSS!</a></li>
+						<li>test unordered list text</li>
+					</ul>
+					<ol>
+						<li><a href="http://validator.w3.org/check?uri=referer">Valid XHTML 1.1</a></li>
+						<li><a href="http://jigsaw.w3.org/css-validator/check/referer">Valid CSS!</a></li>
+						<li>test ordered list text</li>
+					</ol>
+					<dl>
+						<dt>test definition list</dt>
+						<dd>test definition list</dd>
+					</dl>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin eu est ut mi ornare placerat. Suspendisse felis odio, elementum non, blandit vel, auctor eget, nunc. Fusce convallis dignissim odio. Phasellus commodo egestas felis. Praesent eu sem at mi tempus egestas. Donec mollis. Morbi in lectus id magna dictum eleifend. Morbi vel diam quis sapien sollicitudin lacinia. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In consequat facilisis turpis. Proin erat dui, dictum nec, tincidunt nec, pharetra nec, tellus. Curabitur facilisis, nulla a tincidunt gravida, leo pede porttitor odio, ac adipiscing felis leo sit amet justo. Nunc egestas sodales sem. Duis ac mauris eu enim scelerisque mattis. Vivamus tortor neque, ultricies vel, dignissim nec, porttitor pulvinar, wisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis ipsum nibh, nonummy sit amet, gravida et, ultrices at, wisi. Pellentesque iaculis auctor risus. Nullam mauris. Etiam pede tortor, auctor at, aliquet sit amet, hendrerit.</p>
+				</div>
+			</div>
+			<div class="mblock">
+				<div class="inmblock">
+					<h3><a href="http://www.supertramp.com/">Supertramp > The Logical Song</a></h3>
+					<p><code>When I was young, it seemed that life was so wonderful,
+	A miracle, oh it was beautiful, magical.
+	And all the birds in the trees, well they'd be singing so happily,
+	Joyfully, playfully watching me.</code>
+					<a href="http://www.scootertechno.com/archives/release.asp?id=21">Yeaaah!</a> - mixed by Scooter
+	<code>But then they send me away to teach me how to be sensible,
+	Logical, responsible, practical.
+	And they showed me a world where I could be so dependable,
+	Clinical, intellectual, cynical.</code>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="pane ui-layout-north" style="padding:0px"> 
+		<div id="upperblock">
+			<div class="upblock">
+				<h1>SIZERS's BLOG : a Korean SW Engineer</h1>
+				<h2>sizers.cloudfoundry.com</h2>
+			</div>
+		</div>
+	</div>
+	<!--
+	<div class="pane ui-layout-south" style="padding:0px">
+		<div id="bottompan">
+			<p><a href="#">small</a> | <a href="#">bottom</a> | <a href="#">menu</a> | <a href="#">without</a> | <a href="#">any</a> | <a href="#">effects</a></p>
+
+			&copy;2007 Mega best website. Design template: <a href="http://ruslog.com/design/">Rus Log</a>
+		</div>
+	</div>
+
+	<div class="pane ui-layout-east" style="padding:0px">
+
+	</div>
+	-->
+	<div class="pane ui-layout-west" style="padding:0px;overflow:hidden;background-color:#eee">
+
+			<div class="lblock">
+				<h3>MENU</h3>
+				<ul>
+					<br/>
+					<li><a href="#">CATEGORY</a></li>
+					<li><a href="#">- Develope</a></li>
+					<li><a href="#">- Politics</a></li>
+					<li><a href="#">- Leisure</a></li>
+					<br/>
+					<li><a href="#">GUEST_BOOK</a></li>
+					<li><a href="#">MY_PROFILE</a></li>
+					<br/>
+				</ul>
+			</div>
+			<div class="lblock">
+				<h3>RECENT GUEST BOOK</h3>
+				<ul>
+					<li><a href="http://ruslog.com/">RusLog.com</a></li>
+					<li><a href="#" class="current">CATEGORY 2</a></li>
+					<li><a href="http://www.oswd.org/">Open Source Web Design</a></li>
+					<li><a href="http://topfree.biz/">Top Freebies</a></li>
+					<li><a href="#">category 5</a></li>
+					<li><a href="#">category 6</a></li>
+					<li><a href="#">category 7</a></li>
+					<li><a href="#">category 8</a></li>
+					<li><a href="#">category 9</a></li>
+					<li><a href="#">category 10</a></li>
+				</ul>
+			</div>
+			<div class="lblock">
+				<h3>MENU 3:</h3>
+				<ul class="less">
+					<li><a href="#">&bull; Category</a></li>
+					<li><a href="#">&bull; Category 2</a></li>
+					<li><a href="#" class="current">&bull; Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></li>
+					<li><a href="#">&bull; super category with long description</a></li>
+					<li><a href="#">&bull; CATEGORY 5</a></li>
+					<li><a href="#">&bull; category 6</a></li>
+					<li><a href="#">&bull; category 7</a></li>
+					<li><a href="#">&bull; Proin eu est ut mi ornare placerat</a></li>
+					<li><a href="#">&bull; Suspendisse felis odio, elementum non, blandit vel, auctor eget, nunc</a></li>
+					<li><a href="#">&bull; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</a></li>
+					<li><a href="#">&bull; Curabitur facilisis, nulla a tincidunt gravida, leo pede porttitor odio, ac adipiscing felis leo sit amet justo</a></li>
+				</ul>
+			</div>
+			<div class="lblock">
+				<p>&nbsp;Simple text block. Here You can write any news, remarks and other information</p>
+			</div>
+			<div class="lblock">
+				<h3>search:</h3>
+				<form method="post" action="#">
+				<div>
+				<input type="text" />
+				<input type="submit" value="GO" />
+				</div>
+				</form>
+			</div>
+
+	</div>
+</div>
+</body>
+</html>

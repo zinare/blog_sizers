@@ -1,0 +1,74 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+	<title>Layout Container</title>
+
+	<link type="text/css" rel="stylesheet" href="layout-default-latest.css" />
+	<style type="text/css">
+	html, body {
+		background:	#666;
+		width:		100%;
+		height:		100%;					
+		padding:	0;
+		margin:		0;
+		overflow:	auto; /* when page gets too small */
+	}
+	#container {
+		background:	#999;
+		height:		100%;
+		margin:		0 auto;
+		width:		100%;
+		max-width:	1200px;
+		min-width:	800px;
+		_width:		800px; /* min-width for IE6 */
+	}
+	.pane {
+		display:	none; /* will appear when layout inits */
+	}
+	</style>
+
+	<script type="text/javascript" src="jquery-latest.js"></script>
+	<script type="text/javascript" src="jquery-ui-latest.js"></script>
+	<script type="text/javascript" src="jquery.layout-latest.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function () {
+		$('#container').layout({
+			//north__size:				125,
+			//west__size:				125 
+			spacing_open:			8, // ALL panes
+			spacing_closed:			14 // ALL panes
+		});
+	});
+
+	</script>
+
+</head>
+<body>
+<div id="container">
+	<div class="pane ui-layout-center">
+		Center
+		<p><a href="http://layout.jquery-dev.net/demos.html"><b>Go to the Demos page</b></a></p>
+	</div>
+	<div class="pane ui-layout-north">
+		North <br/>
+		North <br/>
+		North <br/>
+		North <br/>
+		North <br/>		North <br/>
+		North <br/>
+		North <br/>
+		North <br/>
+
+	</div>
+	<!--
+	<div class="pane ui-layout-south">South</div>
+	-->
+	<div class="pane ui-layout-east">East</div>
+	<div class="pane ui-layout-west">West</div>
+</div>
+</body>
+</html>
