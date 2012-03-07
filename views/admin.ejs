@@ -1,5 +1,28 @@
+<script>
+$(document).ready(function(){
+	$("#btnSavePost").bind("click",function(){
+		//function(strSvcId, oInput, bAsync, fCallback)
+		commonUtil.callService("inputPost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
+			alert(output);
+		});
+	});
+	
+	getBlogPostList();
+});
+
+function getBlogPostList(){
+	commonUtil.callService("getPostList",{} ,true, function(output){
+		alert(output);
+	});
+}
+
+</script>
+
 
 <div>블로그 쓰기</div>
-<input type="text" name="postTitle"/><br/>
-<textarea name="postContent"></textarea><br/>
-<input type="button" value="저장"/>
+<div id="blogInputFrm">
+	<input type="text" name="postTitle" style="width:100%"/><br/>
+	<textarea name="postContent"  style="width:100%;height:300px"></textarea><br/>
+	<input type="button" id="btnSavePost" value="저장"/>
+</div>
+
