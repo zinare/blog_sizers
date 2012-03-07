@@ -1,0 +1,74 @@
+	
+<div class="centerTitle">GUEST_BOOK</div>
+<br/>
+
+
+
+<div id='livereLayer' style='width:100%'> </div>
+<script type="text/javascript">
+<!--
+/* 아래의 두개의 변수 var rep와 var title은 티스토리(에서 제공하는 참조자) 유저용으로 만들어진 값입니다.*/
+//var rep = document.domain+"/[글번호등]";
+//var title = "[[##_article_rep_title_##]]";
+
+var rep = "sizers.cloudfoundry.com/guestbook";
+var title = "GuestBook:";
+
+var livereReply = new Livere( rep , "livereLayer" , title , "", "oralhazard", "default" , "openwhite" , 15);
+livereReply.init();
+//-->
+</script>
+
+
+
+<!--
+
+	
+/* 1번 설치코드 - </head>앞에 넣어주세요 */
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.livere.co.kr/ver5/livere.jsp" charset="utf-8" ></script>
+
+위의 두 줄의 스크립트는 </head> 바로 위에 적용해주세요
+
+/* 2번 설치코드 - 원하는 위치에 넣어주세요 */
+<div id='layer' style='width: 원하시는 폭px;'> 
+
+<script language="javascript">
+
+/* 아래의 두개의 변수 var rep와 var title은 티스토리(에서 제공하는 참조자) 유저용으로 만들어진 값입니다.
+        var rep = document.domain+"/[##_article_rep_id_##]";
+        var title = "[[##_article_rep_title_##]]";
+*/
+	livereReply = new Livere( rep , "layer" , title , "태그", "트위터아이디", "default" , "openwhite" , 15);
+	livereReply.init();
+
+</script>
+
+</div>
+
+/*
+위의 설치코드를 원하시는 영역 엘리먼트 안에 삽입해주시면 됩니다.
+
+예를 들어 설치코드를 감싸고 있는 영역이 다음과 같다면 <div id="layer">설치코드</div>
+
+동적으로 라이브리가 표시될 엘리먼트의 아이디(예: div의 layer)를 두번째 파라메터에 지정해주십시오. (두번째 파라메터 설명과 연관이 있습니다. id 값은 원하시는 값으로 잡아주시면 됩니다)
+
+
+파라메터는 총 10가지이고
+
+첫번째는 rep 부분으로 http:// 를 제외한 해당 게시물의 url을 작성하여 주시면 됩니다.
+
+두번째는 targetDIV 부분으로 라이브리 플랫폼이 삽입될 영역의 엘레먼트의 ID이름을 적어주시면 됩니다.
+
+세번째는 타이틀 부분으로 포스팅 시 해당 댓글에 첨부되는 타이틀 입니다.
+
+네번째는 태그 부분으로 포스팅 시 해당 댓글에 첨부되는 태그 입니다.
+
+다섯번째는 관리자 트위터 계정 파라메터입니다. 라이브리 댓글을 관리하시는 트위터 계정을 적어주시면 됩니다.
+
+여덟번째는 더보기 개수 파라메터입니다. 한번에 표시할 리스트 개수를 적어주시면 됩니다.
+
+*/
+					
+
+-->

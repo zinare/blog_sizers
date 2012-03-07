@@ -17,7 +17,6 @@ var host = (process.env.VCAP_APP_HOST || 'localhost');
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
-  //app.set('view engine', 'jade');
   app.set('view engine', 'ejs');
   //app.set('view options', { layout: false }) 
   app.use(express.bodyParser());
@@ -34,18 +33,20 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-app.all("/",function(req,res){
-	util.router(req,res);
+app.all("/",function(req,res,next){
+	util.router(req,res,next);
 });
-app.all("/:var1",function(req,res){
-	util.router(req,res);
+app.all("/:var1",function(req,res,next){
+	util.router(req,res,next);
 });
-app.all("/:var1/:var2",function(req,res){
-	util.router(req,res);
+app.all("/:var1/:var2",function(req,res,next){
+	util.router(req,res,next);
 });
-app.all("/:var1/:var2/:var3",function(req,res){
-	util.router(req,res);
+app.all("/:var1/:var2/:var3",function(req,res,next){
+	util.router(req,res,next);
 });
+
+
 
 
 /*

@@ -34,6 +34,7 @@
 	<script type="text/javascript" src="/javascripts/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.ui.all.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.layout.js"></script>
+
 	<script type="text/javascript">
 
 	$(document).ready(function () {
@@ -41,8 +42,12 @@
 			//north__size:				125,
 			west__size:				250,
 			spacing_open:			8, // ALL panes
-			spacing_closed:			14 // ALL panes
+			spacing_closed:			14, // ALL panes
+			north__resizable:		false,
+			west__resizable:		false,
+			east__initClosed:	true
 		});
+
 	});
 
 	</script>
@@ -52,16 +57,38 @@
 
 
 <div id="container">
-	<div class="pane ui-layout-center" style="padding:0px">
+	<div class="pane ui-layout-center" style="padding:10px">
+		<br/>
+		<div style="font-size:'15px';font-face:bold;">GUEST_BOOK</div>
+		<br/>
+		
+		<div id='livereLayer' style='width:100%'> </div>
+		<script type="text/javascript" src="http://www.livere.co.kr/ver5/livere.jsp" charset="utf-8" ></script>
+		<script type="text/javascript">
+		<!--
+		/* 아래의 두개의 변수 var rep와 var title은 티스토리(에서 제공하는 참조자) 유저용으로 만들어진 값입니다.*/
+		//var rep = document.domain+"/[글번호등]";
+		//var title = "[[##_article_rep_title_##]]";
+		
+		var rep = "http://sizers.cloudfoundry.com/guestbook";
+		var title = "GuestBook:";
+
+		var livereReply = new Livere( rep , "livereLayer" , title , "", "oralhazard", "default" , "openwhite" , 15);
+		livereReply.init();
+		//-->
+		</script>
+
+
+
+
+		<!--
 		<div id="mainpan">
-			<div class="mblock">
-				<div class="inmblock">
+			<div class="mblock"><div class="inmblock">
 					<h3><a href="#">Super mega best header</a></h3>
 					<a href="http://www.favobit.com/"><img src="favobig.jpg" width="100" height="100" alt="just image example" /></a>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin eu est ut mi ornare placerat. <a href="#">Suspendisse felis odio, elementum non, blandit vel, auctor eget, nunc</a>. Fusce convallis dignissim odio. Phasellus commodo egestas felis. Praesent eu sem at mi tempus egestas. Donec mollis. Morbi in lectus id magna dictum eleifend. Morbi vel diam quis sapien sollicitudin lacinia. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In consequat facilisis turpis. Proin erat dui, dictum nec, tincidunt nec, pharetra nec, tellus. Curabitur facilisis, nulla a tincidunt gravida, leo pede porttitor odio, ac adipiscing felis leo sit amet justo. Nunc egestas sodales sem. Duis ac mauris eu enim scelerisque mattis. Vivamus tortor neque, ultricies vel, dignissim nec, porttitor pulvinar, wisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis ipsum nibh, nonummy sit amet, gravida et, ultrices at, wisi. Pellentesque iaculis auctor risus. Nullam mauris. Etiam pede tortor, auctor at, aliquet sit amet, hendrerit.</p>
 					<div class="comments">Posted on: August 24th, 2005 <a href="#">read more...</a></div>
-				</div>
-			</div>
+			</div></div>
 			<div class="mblock">
 				<div class="inmblock">
 					<h3><a href="#">Super mega best header 2 with various elements such as ul, ol, dl</a></h3>
@@ -99,6 +126,7 @@
 				</div>
 			</div>
 		</div>
+		-->
 	</div>
 
 
@@ -106,7 +134,7 @@
 		<div id="upperblock">
 			<div class="upblock">
 				<h1>SIZERS's BLOG : a Korean SW Engineer</h1>
-				<h2>sizers.cloudfoundry.com</h2>
+				<h2><a href="http://sziers.xe.to">http://sizers.xe.to</a> (twitter : <a href="https://twitter.com/#!/oralhazard" target="_blank">@oralhazard</a>)</h2>
 			</div>
 		</div>
 	</div>
@@ -139,6 +167,7 @@
 					<br/>
 				</ul>
 			</div>
+			<!--
 			<div class="lblock">
 				<h3>RECENT GUEST BOOK</h3>
 				<ul>
@@ -182,7 +211,7 @@
 				</div>
 				</form>
 			</div>
-
+			-->
 	</div>
 </div>
 </body>
