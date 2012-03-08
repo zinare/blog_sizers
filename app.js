@@ -4,7 +4,7 @@
  */
 
 var express = require('express');
-var ejs = require('ejs');
+//var ejs = require('ejs');
 var util = require('./util.js');
 var properties = require('./properties.js');
 
@@ -45,60 +45,6 @@ app.all("/:var1/:var2",function(req,res,next){
 app.all("/:var1/:var2/:var3",function(req,res,next){
 	util.router(req,res,next);
 });
-
-
-
-
-/*
-app.get('/', function(req, res){
-	res.render('index',{title:"test"});
-});
-
-app.get("/save",function(req,res){
-
-	var mongoose = require('mongoose');
-    mongoose.connect(properties.mongodbUrl);
-
-    var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
-
-    var Comments = new Schema({
-        title     : String
-      , name      : String
-      , date      : Date
-    });
-
-    var Comments = mongoose.model('Comments', Comments);
-    var post = new Comments();
-    post.title='blahblah';
-	post.name="Park Jeong Hoon";
-    // create a comment
-    //post.comments.push({ title: 'My comment' });
-
-    post.save(function (err) {
-      if(err){
-          throw err;
-          console.log(err);
-      }else{
-          console.log('saved!');
-      }
-    });
-
-	res.end("saved");
-});
-*/
-
-
-/*
-// Routes
-app.get('/', routes.index);
-
-app.get('/forum', function(req, res){
-  res.render('forum',
-	{	title:	'Cleaning Supplies',
-supplies:	['mop', 'broom', 'duster']	}	  
-  );
-});
-*/
 
 app.listen(port);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

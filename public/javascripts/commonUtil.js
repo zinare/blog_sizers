@@ -33,6 +33,46 @@
 		if(isWrapped) jqFrm.end().unwrap();
 		return json;
 	};
+
+	$.fn.setFormJSON = function(objJson, seperator){
+		//for(var obj in objJson){
+		//	//alert((new JsonUtil()).stringify(obj));
+		//	alert(obj.toString());
+		//}
+		var jqFrm = $(this);
+		
+		if(!seperator) seperator = ",";
+		
+		$.each(objJson,function(id, val){
+			//
+			//alert(id + "+::+"+ val);
+			//alert($(frmSelector).length);
+			var jqCtl = jqFrm.find(":input[name='"+id+"']");
+			if(jqCtl.length<1) return;
+			//alert(jqCtl[0].tagName);
+			if(jqCtl[0].tagName == "INPUT"){
+				if(jqCtl.attr("type")=="radio") {
+					//alert(jqCtl.length);
+					jqCtl.attr("checked",false);
+					jqCtl.filter(":radio[value='"+val+"']").attr("checked",true);
+				} else if(jqCtl.attr("type")=="checkbox") {
+					jqCtl.attr("checked",false);
+					$.grep(val.split(seperator),function(ele,i){
+						//alert(ele);
+						jqCtl.filter(":checkbox[value='"+ele+"']").attr("checked",true);
+					});
+				} else {
+					jqCtl.val(unescape(val));
+				}
+			} else if (jqCtl[0].tagName == "SELECT"){
+				jqCtl.val(unescape(val));
+			} else if (jqCtl[0].tagName == "TEXTAREA"){
+				jqCtl.text(unescape(val));
+			}
+		});
+	}
+	
+	
 	
 	$.fn.outerHTML = function(){
 	    // IE, Chrome & Safari will comply with the non-standard outerHTML, all others (FF) will have a fall-back for cloning

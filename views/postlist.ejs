@@ -1,0 +1,22 @@
+<div class="centerTitle"><%=title%></div><br/>
+
+<div id="mainpan">
+	<div class="mblock"><div class="inmblock">
+<%
+	if(postlist.length==0) {
+%>
+		There's no post in this category 
+<%
+	}
+	for(var i=0;i<postlist.length;i++){
+%>
+		<li/> 
+			<a href="/postview/<%=postlist[i]._id%>?lcate=<%=lcate%>">
+				<%=postlist[i].date1%> <%=postlist[i].postTitle%>
+			</a>
+<%		
+	}
+%>
+
+	</div></div>
+</div>

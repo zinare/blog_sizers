@@ -7,6 +7,7 @@ ObjectId = Schema.ObjectId;
 
 var blogposts = new Schema({
 	id :ObjectId,
+	postCate :String,
 	postTitle :String,
 	postContent :String,
 	date  :Date

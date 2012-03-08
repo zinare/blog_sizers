@@ -1,28 +1,70 @@
 <script>
+var oPostList = [];
+
 $(document).ready(function(){
 	$("#btnSavePost").bind("click",function(){
 		//function(strSvcId, oInput, bAsync, fCallback)
-		commonUtil.callService("inputPost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
+		commonUtil.callService("savePost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
 			alert(output);
+			getPostList();
 		});
 	});
 	
-	getBlogPostList();
+	$("#btnInitForm").bind("click",function(){
+		var adminToken = $("#adminToken").val();
+		
+		$("#blogInputFrm").initForm();
+		$("#adminToken").val(adminToken);
+	});
+	
+	$("#blogPostList div").live("click",function(){
+		for(var i=0;i<oPostList.length;i++){
+			if(oPostList[i]._id == this.id){
+				$("#blogInputFrm").setFormJSON(oPostList[i]);
+			}
+		}
+		//alert(this.id);
+	});
+	
+	getPostList();
+
 });
 
-function getBlogPostList(){
+function getPostList(){
+	$("#blogPostList").empty();
 	commonUtil.callService("getPostList",{} ,true, function(output){
-		alert(output);
+		//alert(output);
+		var oRtn = JSON.parse(output);
+		oPostList = oRtn.blogposts;
+		//alert(oPostList.length);
+		for(var i=0;i<oPostList.length;i++){
+			$("#blogPostList").append("<div id='"+oPostList[i]._id+"'> - "+ oPostList[i].postTitle +"</div>");
+		}
 	});
 }
 
 </script>
 
 
-<div>블로그 쓰기</div>
+<div>Blog Management</div>
+<br/><br/>
+<input type="button" id="btnSavePost" value="Save"/>
+<input type="button" id="btnInitForm" value="Init"/>
+<br/><br/>
 <div id="blogInputFrm">
-	<input type="text" name="postTitle" style="width:100%"/><br/>
-	<textarea name="postContent"  style="width:100%;height:300px"></textarea><br/>
-	<input type="button" id="btnSavePost" value="저장"/>
+	<input type="hidden" id="adminToken" name="adminToken" value="<%=adminToken%>"/>
+	<input type="text" id="_id" name="_id" style="width:200px" readonly/>
+	<select name="postCate">
+		<option value="dev">Develope</option>
+		<option value="pol">Politics</option>
+		<option value="les">Leisure</option>
+	</select><br/>
+	<input type="text" name="postTitle" style="width:95%"/><br/>
+	<textarea name="postContent"  style="width:95%;height:300px"></textarea><br/>
+	
 </div>
+<br/><br/>
+<b>Post List</b><br/>
+<div id="blogPostList">
 
+</div>

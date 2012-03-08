@@ -1,18 +1,18 @@
 <div style="font-size:20px;font-weight:bold;">GUEST_BOOK2</div>
 <br/>
 
-<div id="disqus_thread"></div>
+
+<script type="text/javascript" src="http://www.livere.co.kr/ver5/livere.jsp" charset="utf-8" ></script>	
+<div id='livereLayer' style='width:100%'> </div>
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'blogsizers'; // required: replace example with your forum shortname
+<!--
+/* 아래의 두개의 변수 var rep와 var title은 티스토리(에서 제공하는 참조자) 유저용으로 만들어진 값입니다.*/
+//var rep = document.domain+"/[글번호등]";
+//var title = "[[##_article_rep_title_##]]";
+var rep = document.domain+"/postview/<%=postview.id%>";
+var title = "<%=postview.postTitle%>";
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+var livereReply = new Livere( rep , "livereLayer" , title , "", "oralhazard", "default" , "openwhite" , 10);
+livereReply.init();
+//-->
 </script>
-
-
-
