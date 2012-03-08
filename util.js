@@ -119,8 +119,27 @@ exports.router = function(req, res, next){
 						res.end(JSON.stringify(oOutput));
 					});
 				}
-
-				//mongoose.close();
+			} 
+			if(oInput.svcId == "delPost"){
+				if(!confirm("You surely want to delete this post?")) return;
+				if(!oInput._id||oInput._id.lenght < 2) {
+					alert("Post is not selected!!");
+					return;
+				}
+				if(oInput.adminToken != properties.adminToken) {
+					res.end("Admin authentication is not valid!!");
+					return;
+				}
+				mongoose.connect(properties.mongodbUrl);
+				models.blogposts.remove({"_id":oInput._id}, function(err) {
+					if (err) {
+						console.log(err);
+						oOutput.retCd = "ER";
+					} else {
+						console.log('saved!');
+					}
+					res.end();
+				});
 			} 
 			if(oInput.svcId == "getPostList"){
 				mongoose.connect(properties.mongodbUrl);

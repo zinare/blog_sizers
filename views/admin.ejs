@@ -2,19 +2,25 @@
 var oPostList = [];
 
 $(document).ready(function(){
-	$("#btnSavePost").bind("click",function(){
-		//function(strSvcId, oInput, bAsync, fCallback)
-		commonUtil.callService("savePost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
-			alert(output);
-			getPostList();
-		});
-	});
-	
 	$("#btnInitForm").bind("click",function(){
 		var adminToken = $("#adminToken").val();
 		
 		$("#blogInputFrm").initForm();
 		$("#adminToken").val(adminToken);
+	});
+	
+	$("#btnSavePost").bind("click",function(){
+		commonUtil.callService("savePost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
+			//alert(output);
+			getPostList();
+		});
+	});	
+	
+	$("#btnDelPost").bind("click",function(){
+		commonUtil.callService("delPost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
+			//alert(output);
+			getPostList();
+		});
 	});
 	
 	$("#blogPostList div").live("click",function(){
@@ -23,7 +29,6 @@ $(document).ready(function(){
 				$("#blogInputFrm").setFormJSON(oPostList[i]);
 			}
 		}
-		//alert(this.id);
 	});
 	
 	getPostList();
@@ -48,8 +53,9 @@ function getPostList(){
 
 <div>Blog Management</div>
 <br/><br/>
-<input type="button" id="btnSavePost" value="Save"/>
 <input type="button" id="btnInitForm" value="Init"/>
+<input type="button" id="btnSavePost" value="Save"/>
+<input type="button" id="btnDelPost" value="Delete"/>
 <br/><br/>
 <div id="blogInputFrm">
 	<input type="hidden" id="adminToken" name="adminToken" value="<%=adminToken%>"/>
