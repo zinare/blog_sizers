@@ -1,0 +1,2 @@
+exports.adminToken = "1234";
+exports.mongodbUrl = "mongodb://blabla";
