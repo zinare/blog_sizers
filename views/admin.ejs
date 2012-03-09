@@ -17,9 +17,16 @@ $(document).ready(function(){
 	});	
 	
 	$("#btnDelPost").bind("click",function(){
-		commonUtil.callService("delPost",$("#blogInputFrm").serializeJSON(",",true) ,true, function(output){
+		if(!confirm("Are You surely want to delete this post?")) return;
+		var oInput = $("#blogInputFrm").serializeJSON(",",true);
+		if(!oInput._id||oInput._id.lenght < 2) {
+			alert("No post is selected!!");
+			return;
+		}
+		commonUtil.callService("delPost", oInput,true, function(output){
 			//alert(output);
 			getPostList();
+			$("#btnInitForm").trigger("click");
 		});
 	});
 	

@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
 	<title>BlogSizers :: <%=title%></title>
-
+	<link type="text/css" href="/stylesheets/jqui_smoothness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
 	<link type="text/css" rel="stylesheet" href="/stylesheets/layout-default.css" />
 	<link type="text/css" rel="stylesheet" href="/stylesheets/blogTemplateGrey.css" />
 	<style type="text/css">
@@ -33,32 +33,42 @@
 	
 	/* These style for my own */
 	.centerTitle { font-size:20px;font-weight:bold;}
+	
+	
+	
+	
+
 	</style>
 
 
-	<script type="text/javascript" src="/javascripts/jquery-1.7.1.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.ui.all.js"></script>
-	<!--
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.js"></script>
-	-->
+	<script type="text/javascript" src="/javascripts/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery-ui-1.8.18.custom.min.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.layout.js"></script>
 	<script type="text/javascript" src="/javascripts/json2.js"></script>
 	<script type="text/javascript" src="/javascripts/commonUtil.js"></script>
 	
 	
 	<script type="text/javascript">
-
+	var myLayout;
+	
 	$(document).ready(function () {
-		$('#container').layout({
-			//north__size:				125,
-			west__size:				220,
-			spacing_open:			8, // ALL panes
-			spacing_closed:			14, // ALL panes
-			north__resizable:		false,
-			west__resizable:		false,
-			east__initClosed:	true
+		myLayout = $('#container').layout({
+			useStateCookie: true, 
+			//cookie__name:  "_container",
+			cookie__path: "/",
+			north__size : 132,
+			west__size : 220,
+			spacing_open : 8, // ALL panes
+			spacing_closed : 14, // ALL panes
+			north__resizable : false,
+			west__resizable : false,
+			east__initClosed : true,
+			tmp : "tmp"
 		});
+		myLayout.saveCookie( "", { path: "", expires: -1 }); 
+
+
+
 
 	});
 

@@ -2,7 +2,7 @@
 
 This is a source code of my own blog. But not yet finished. 
 
-It made from. node.js and mongoose, express with ejs.
+It made by node.js, mongoose, express(ejs).
 
 This blog's running under cloud foundry paas cloud service.
 
@@ -27,7 +27,7 @@ It's same as another, normal node.js project
 I might think more
 
 
-=======================================================================
+#=======================================================================
 
 
 # 블로그 sizers

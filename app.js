@@ -6,7 +6,7 @@
 var express = require('express');
 //var ejs = require('ejs');
 var util = require('./util.js');
-var properties = require('./properties.js');
+//var properties = require('./properties.js');
 
 var app = module.exports = express.createServer();
 
